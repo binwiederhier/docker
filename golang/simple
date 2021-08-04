@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "This is a very simplistic Go REPL. Type your entire program below,"
+echo "excluding the 'package main' line. To execute, simply type '.'."
+echo
+
+script="package main\n\n"
+prompt="$ "
+while true; do
+  read -r -e -p"$prompt" line
+  if [ "$line" = "." ]; then
+    echo -e "$script" > /tmp/main.go
+    go run /tmp/main.go
+    script="package main\n\n"
+    prompt="$ "
+    echo
+    echo
+  else
+    quoted="${line//\\/\\\\}"
+    script="$script$quoted\n"
+    prompt="> "
+  fi
+done
