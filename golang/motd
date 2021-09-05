@@ -1,7 +1,10 @@
 Hi there!
 
-You have a few options:
-- Type 'simple' to get a simple, but fast REPL
+Type 'yaegi' to get a quick Go REPL.
+
+All options:
+- Type 'simple' to get a simple REPL
+- Type 'yaegi' to use the REPL from https://github.com/traefik/yaegi
 - Type 'gore' to use the REPL from https://github.com/x-motemen/gore
 - Open main.go in vim or nano and then run it with 'go run main.go'
 
